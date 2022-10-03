@@ -12,6 +12,11 @@ public class CoffeshopController {
 	public String listMahasiswa() {
 		return "index";
 	}
+	
+	@RequestMapping("/customer")
+	public String orderCoffee() {
+		return "customer";
+	}
 
 }
 
