@@ -13,6 +13,12 @@
 <body>
 
 <h1>CoffeeShop</h1>
+<ul>
+	<li><a href="customer">Customer View</a></li>
+	<li><a href="login">Login View</a></li>
+	<li><a href="owner">Owner View</a></li>
+	<li><a href="register">Registration View</a></li>
+</ul>
 
 </body>
 

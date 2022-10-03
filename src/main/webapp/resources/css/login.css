@@ -28,7 +28,7 @@
     position:absolute;
     top:0;
     bottom:0;
-    background-image:url("Style/bg-login.jpg");
+    background-image:url("../images/bg-login.jpg");
     background-size:cover;
 }
 #cewe {
@@ -50,7 +50,7 @@
     position:absolute;
     top:0;
     bottom:0;
-    background-image:url("Style/bg-regist.jpg");
+    background-image:url("../images/bg-regist.jpg");
     background-size:cover;
 }
 #reg-sub {
