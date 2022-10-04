@@ -40,7 +40,7 @@
                   <svg id="${menu.menuId}" onclick="add(event)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
                   </svg>
-                  <span id="${menu.menuId}" key="${menu.menuNama}">0</span>
+                  <span id="${menu.menuId}" key="${menu.menuNama}" harga="${menu.menuHarga}">0</span>
                   <svg id="${menu.menuId}" onclick="sub(event)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
                   </svg>
@@ -55,26 +55,28 @@
         </div>
         <div class="w-2/6 p-3 lg:w-3/12 mx-3">
           <h2 class="px-2 text-lg font-bold">Struk</h2>
-          <div class="mt-4 flex flex-col gap-3 rounded-lg p-3 outline outline-1">
+          <div id="printableArea" class="mt-4 flex flex-col gap-3 rounded-lg p-3 outline outline-1">
             <div class="text-right text-xs">
               <p>Sigma Coffee</p>
               <p id="date"></p>
               <p>Order ID : 123e4567-e89b-12d3-a456</p>
             </div>
             <div>
-              <table id="list-table" class="w-[100%] table-fixed text-right font-mono text-xs">
-                <tr class="table-row">
+              <table class="w-[100%] table-fixed text-right font-mono text-xs">
+                <thead><tr class="table-row">
                   <th class="">Nama</th>
                   <th>Jumlah</th>
                   <th>Harga</th>
                 </tr>
-
+                </thead>
                 
-                
+                <tbody id="list-table" class="last:border-b-2 border-b-black ">
+                </tbody>
               </table>
+              <p id="total" class="text-xs text-right font-bold"></p>
             </div>
           </div>
-          <button class="mt-3 w-[100%] rounded bg-[#A27B5C] p-2 font-bold text-white">Order</button>
+          <button onclick="printDiv('printableArea')" class="mt-3 w-[100%] rounded bg-[#A27B5C] p-2 font-bold text-white">Order</button>
         </div>
       </div>
     </main>

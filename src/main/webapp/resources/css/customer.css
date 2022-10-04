@@ -684,6 +684,11 @@ video {
   border-radius: 0.25rem;
 }
 
+.border-b-black {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-\[\#2C3639\] {
   --tw-bg-opacity: 1;
   background-color: rgb(44 54 57 / var(--tw-bg-opacity));
@@ -776,6 +781,10 @@ video {
 
 .outline-\[\#A27B5C\] {
   outline-color: #A27B5C;
+}
+
+.last\:border-b-2:last-child {
+  border-bottom-width: 2px;
 }
 
 @media (min-width: 1024px) {
