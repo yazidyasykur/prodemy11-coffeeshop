@@ -5,9 +5,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.prodemy.coffeeshop.model.Menu;
 
+@Repository
 public class MenuDaoImpl implements MenuDao{
 
     @Autowired

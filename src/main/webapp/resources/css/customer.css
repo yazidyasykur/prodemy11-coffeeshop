@@ -619,6 +619,10 @@ video {
   width: 10rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -708,8 +712,8 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pr-2 {
-  padding-right: 0.5rem;
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .text-right {
