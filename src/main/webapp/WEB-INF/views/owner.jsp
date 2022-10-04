@@ -16,7 +16,7 @@
         <!-- Sidebar -->
         <div class="bg-amber-800" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-coffee me-2"></i>Coffee Shop</div>
+                    class="fas fa-coffee me-2"></i>Sigma Coffee Shop</div>
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -99,6 +99,24 @@
                                     <td>20</td>
                                 </tr>
                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Americano</td>
+                                    <td>Dewi</td>
+                                    <td>20</td>
+                                </tr>
+                                   <tr>
+                                    <th scope="row">1</th>
+                                    <td>Americano</td>
+                                    <td>Dewi</td>
+                                    <td>20</td>
+                                </tr>
+                                   <tr>
+                                    <th scope="row">1</th>
+                                    <td>Americano</td>
+                                    <td>Dewi</td>
+                                    <td>20</td>
+                                </tr>
+                                   <tr>
                                     <th scope="row">1</th>
                                     <td>Americano</td>
                                     <td>Dewi</td>

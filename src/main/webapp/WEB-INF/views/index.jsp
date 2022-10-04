@@ -3,23 +3,28 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 
-<html>
-
+<html lang="en">
 <head>
-
+	<title>index</title>
+	<link rel="stylesheet" href="resources/css/index.css" />
 </head>
 
-
 <body>
-
-<h1>CoffeeShop</h1>
-<ul>
-	<li><a href="customer">Customer View</a></li>
-	<li><a href="login">Login View</a></li>
-	<li><a href="owner">Owner View</a></li>
-	<li><a href="register">Registration View</a></li>
-</ul>
-
-</body>
-
+	<header>
+		<div class="navbar">
+			<div>
+				<ul>
+					<li><a href="customer">Customer</a></li>
+					<li><a href="login">Login</a></li>
+					<li><a href="owner">Owner</a></li>
+					<li><a href="register">Registration</a></li>
+				</ul>
+			</div>
+			<div class="contents">
+				<h1> WELCOME TO</h1>
+				<h2> SIGMA COFFEE SHOP</h2>
+			</div>
+		</div>
+	</header>
+<body>
 </html>
