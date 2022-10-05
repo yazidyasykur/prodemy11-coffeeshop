@@ -1,10 +1,11 @@
 package com.prodemy.coffeeshop.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,4 +33,5 @@ public class Menu {
 
     @Column(name="menu_gambar")
     private String menuGambar;
+
 }
