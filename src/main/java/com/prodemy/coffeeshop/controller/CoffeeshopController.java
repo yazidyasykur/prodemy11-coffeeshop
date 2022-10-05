@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +56,7 @@ public class CoffeeshopController {
 		System.out.println(menulist);
 		return model;
 	}
+	
 	@RequestMapping("/remove/{id}")
 	public String removeMenu(@PathVariable("id") String id) {
 		menuService.hapusMenu(id);
@@ -72,6 +74,20 @@ public class CoffeeshopController {
 			menuService.editMenu(m);
 		}
 		return "redirect:/daftar-menu";
+	}
+	@RequestMapping("/edit/{id}")
+	public String editPhone(@PathVariable("id") int id, Model model) {
+		model.addAttribute("phone", this.phoneService.getPhoneById(id));
+		model.addAttribute("listPhones", this.phoneService.listPhones());
+		return "phone";
+	}
+	
+	@RequestMapping("/edit/{id}")
+	public String editMenu(@PathVariable("id") String id, Model model) {
+	    List<Menu> menulist = menuService.listMenu();
+		model.addAttribute("menu", menuService.menuId(id));
+		model.addAttribute("menuList", menuService.listMenu());
+		return "daftar-menu";
 	}
 	
 
