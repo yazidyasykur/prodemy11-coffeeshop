@@ -7,31 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-	<link rel="stylesheet" href="resources/css/owner.css" />
+	<link rel="stylesheet" href="resources/css/owner1.css" />
     <title>Dashboard</title>
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-amber-800" id="sidebar-wrapper">
+        <div class="bg-yellow-700" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-coffee me-2"></i>Sigma Coffee Shop</div>
             <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="owner" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Statistics</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-paperclip me-2"></i>Daftar Menu</a>          
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="login" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div class="bg-orange-700 w-full" id="">
+        <div class="bg-gray-200 w-full" id="">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id=""></i>
