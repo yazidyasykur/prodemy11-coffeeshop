@@ -12,8 +12,10 @@
 </head>
 
   <body onload="loadHandler()">
+  
+  	<div class="flex flex-wrap">
     
-    <c:forEach items="${allList}" var="list">
+    <c:forEach items="${allList}" var="list" >
     
     <div class="m-2 min-h-fit w-64">
       <div class="bg-[#2C3639] rounded-t-md border-b-2 border-b-[#A27B5C] p-2 text-right text-sm text-white">
@@ -34,20 +36,18 @@
           </thead>
 
           <tbody id="table-body" data="${list.orderList}">
-            <tr>
-              <td>Cappucino</td>
-              <td>x1</td>
-            </tr>
           </tbody>
         </table>
 
         <div class="mt-5 flex w-full justify-center">
-          <button class="rounded-full bg-lime-400 px-3 py-2 font-bold text-white">Complete</button>
+          <button id="${list.orderId}" onclick="deleteHandler(event)"class="rounded-full bg-lime-400 px-3 py-2 font-bold text-white">Complete</button>
         </div>
       </div>
     </div>
     
     </c:forEach>
+    
+   	</div>
     
   </body>
 </html>

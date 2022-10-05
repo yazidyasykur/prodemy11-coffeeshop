@@ -23,6 +23,7 @@ public class WaitListServiceImpl implements WaitListService {
     }
 
     @Override
+    @Transactional
     public void deleteOrder(String id) {
         waitdao.deleteById(id);
     }

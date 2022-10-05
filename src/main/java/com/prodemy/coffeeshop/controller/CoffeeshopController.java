@@ -1,5 +1,7 @@
 package com.prodemy.coffeeshop.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,6 +20,7 @@ import com.prodemy.coffeeshop.model.WaitList;
 import com.prodemy.coffeeshop.service.MenuService;
 import com.prodemy.coffeeshop.service.OrderService;
 import com.prodemy.coffeeshop.service.WaitListService;
+import com.prodemy.coffeeshop.util.IdUtility;
 
 @Controller
 public class CoffeeshopController {
@@ -39,12 +42,13 @@ public class CoffeeshopController {
 	@RequestMapping("/customer")
 	public ModelAndView orderCoffee(ModelAndView model) {
 	    List<Menu> menulist = menuService.listMenu();
+	    IdUtility util = new IdUtility();
+	    
 	    model.addObject("allMenu", menulist);
 		model.setViewName("customer");
-		model.addObject("orderId", UUID.randomUUID().toString());
+		model.addObject("orderId", util.letterFirstUUID());
 		return model;
 	}
-	
 	
 	@PostMapping("/saveorder")
 	public String viewWaitingList(Model model, HttpServletRequest req) {
@@ -60,7 +64,12 @@ public class CoffeeshopController {
 	    wait.setOrderId(req.getParameter("orderId"));
 	    wait.setOrderDate(req.getParameter("dateTime"));
 	    wait.setCustomerName(req.getParameter("nama"));
-	    wait.setOrderList(req.getParameter("orders"));
+	    
+	    try {
+            wait.setOrderList(URLEncoder.encode(req.getParameter("orders"),"UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 	    
 	    orderService.saveOrder(order);
 	    waitService.addOrder(wait);
@@ -76,6 +85,13 @@ public class CoffeeshopController {
         return model;
     }
 	
+	@PostMapping("/deleteorder")
+	public String deleteOrder(HttpServletRequest req) {
+	    String id = req.getParameter("orderId");
+	    waitService.deleteOrder(id);
+	    return("redirect:/waitinglist");
+	}
+	
 	@RequestMapping("/login")
     public String login() {
         return "login";
@@ -90,9 +106,6 @@ public class CoffeeshopController {
     public String owner() {
         return "owner";
     }
-	
-	
-
 }
 
 

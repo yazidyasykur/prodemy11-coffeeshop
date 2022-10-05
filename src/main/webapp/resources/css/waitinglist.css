@@ -574,6 +574,10 @@ video {
   table-layout: auto;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .justify-center {
   justify-content: center;
 }
