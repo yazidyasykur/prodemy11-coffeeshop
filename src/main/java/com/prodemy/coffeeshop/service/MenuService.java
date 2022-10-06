@@ -10,5 +10,6 @@ public interface MenuService {
     public void hapusMenu(String id);
     public void tambahMenu(Menu menu);
     public void editMenu(Menu menu);
+    public Menu findById(String id);
     
 }

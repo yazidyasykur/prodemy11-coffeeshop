@@ -14,7 +14,7 @@
     <div class="container-sm">
     <div id="welcoming" class="mx-5 position-absolute top-50 start-0 translate-middle-y">
         <h1>Welcome!</h1>
-        <p>Coffe Shop</p>
+        <p>Coffee Shop</p>
         <a href="#" >Let's have take a look!</a>
     </div>
 

@@ -25,8 +25,9 @@ public class MenuDaoImpl implements MenuDao{
 
     @Override
     public Menu findById(String id) {
-        // TODO Auto-generated method stub
-        return null;
+		Session session = this.sessionFactory.getCurrentSession();
+		Menu mns = (Menu) session.get(Menu.class, id);
+		return mns;
     }
 
     @Override

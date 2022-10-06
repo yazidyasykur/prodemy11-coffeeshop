@@ -4,8 +4,12 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,8 +18,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name="menu")
 public class Menu {
-
-    @Id
+	
+	@Id	
     @Column(name="menu_id")
     private String menuId;
     
@@ -33,5 +37,6 @@ public class Menu {
 
     @Column(name="menu_gambar")
     private String menuGambar;
+  
 
 }
