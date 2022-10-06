@@ -136,13 +136,13 @@ public class CoffeeshopController {
 	}
 	
 	
-	@RequestMapping("/edit")
+	@GetMapping("/edit")
 	public String edit(Model model, HttpServletRequest req) throws Exception {
-		Menu mns = menuService.findById(req.getParameter("menuId"));
+		Menu mns = menuService.findById(req.getParameter("id"));
 		model.addAttribute("mns", mns);
 		List<Menu> list = menuService.listMenu();
-		model.addAttribute("menulist", list);
-		return "redirect:/daftar-menu";
+		model.addAttribute("allMenu", list);
+		return "edit";
 	}
 	
 	@PostMapping("/mns")
@@ -159,6 +159,7 @@ public class CoffeeshopController {
 			menuService.tambahMenu(mns);
 		} else if ("hapus".equals(mode)) {
 			menuService.hapusMenu(req.getParameter("menuId"));
+			
 		} else {
 			Menu mns = menuService.findById(req.getParameter("menuId"));
 			mns.setMenuNama(req.getParameter("menuNama"));
