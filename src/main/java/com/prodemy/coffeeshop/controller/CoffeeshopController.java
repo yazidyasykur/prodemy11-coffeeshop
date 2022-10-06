@@ -73,7 +73,7 @@ public class CoffeeshopController {
 	    order.setCustomerName(req.getParameter("nama"));
 	    order.setOrderList(req.getParameter("orders"));
 	    order.setTotalAmount(req.getParameter("totalAmount"));
-	    
+	  
 	    wait.setOrderId(req.getParameter("orderId"));
 	    wait.setOrderDate(req.getParameter("dateTime"));
 	    wait.setCustomerName(req.getParameter("nama"));
@@ -119,7 +119,12 @@ public class CoffeeshopController {
     public String owner() {
         return "owner";
     }
-
+	
+	@RequestMapping("/remove/{menuId}")
+	public String hapusMenu(@PathVariable("menuId") String menuId) {
+		menuService.hapusMenu(menuId);
+		return "redirect:/daftar-menu";
+	}
 	
 	@RequestMapping(value = "/daftar-menu", method = RequestMethod.GET)
 	public ModelAndView daftarMenu(ModelAndView model) {
@@ -130,13 +135,14 @@ public class CoffeeshopController {
 		return model;
 	}
 	
+	
 	@RequestMapping("/edit")
 	public String edit(Model model, HttpServletRequest req) throws Exception {
 		Menu mns = menuService.findById(req.getParameter("menuId"));
 		model.addAttribute("mns", mns);
 		List<Menu> list = menuService.listMenu();
 		model.addAttribute("menulist", list);
-		return "daftar-menu";
+		return "redirect:/daftar-menu";
 	}
 	
 	@PostMapping("/mns")
@@ -147,7 +153,9 @@ public class CoffeeshopController {
 			mns.setMenuId(req.getParameter("menuId"));
 			mns.setMenuNama(req.getParameter("menuNama"));
 			mns.setMenuTipe(req.getParameter("menuTipe"));
+			mns.setMenuGambar(req.getParameter("menuGambar"));
 			mns.setMenuDeskripsi(req.getParameter("menuDeskripsi"));
+			mns.setMenuHarga(req.getParameter("menuHarga"));
 			menuService.tambahMenu(mns);
 		} else if ("hapus".equals(mode)) {
 			menuService.hapusMenu(req.getParameter("menuId"));
@@ -158,7 +166,7 @@ public class CoffeeshopController {
 			mns.setMenuDeskripsi(req.getParameter("menuDeskripsi"));
 			menuService.editMenu(mns);			
 		}
-		return "daftar-menu";
+		return "redirect:/daftar-menu";
 	}
 
 	
