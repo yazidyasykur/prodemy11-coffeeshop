@@ -163,7 +163,9 @@ public class CoffeeshopController {
 			Menu mns = menuService.findById(req.getParameter("menuId"));
 			mns.setMenuNama(req.getParameter("menuNama"));
 			mns.setMenuTipe(req.getParameter("menuTipe"));
+			mns.setMenuGambar(req.getParameter("menuGambar"));
 			mns.setMenuDeskripsi(req.getParameter("menuDeskripsi"));
+			mns.setMenuHarga(req.getParameter("menuHarga"));
 			menuService.editMenu(mns);			
 		}
 		return "redirect:/daftar-menu";
