@@ -62,8 +62,10 @@
                             </div> 
                             <div id="act" class= "gap-3 flex absolute bottom-0 right-0 mr-3 mb-2 items-center" >
                               <div class="w-6 opacity-30 hover:opacity-100 hover:cursor-pointer hover:text-clip">
+                              <a href="${contextName}/edit?id=${menu.menuId}" onclick="document.getElementById('authentication-modal').classList.remove('hidden')">
                            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path d="M373.1 24.97C401.2-3.147 446.8-3.147 474.9 24.97L487 37.09C515.1 65.21 515.1 110.8 487 138.9L289.8 336.2C281.1 344.8 270.4 351.1 258.6 354.5L158.6 383.1C150.2 385.5 141.2 383.1 135 376.1C128.9 370.8 126.5 361.8 128.9 353.4L157.5 253.4C160.9 241.6 167.2 230.9 175.8 222.2L373.1 24.97zM440.1 58.91C431.6 49.54 416.4 49.54 407 58.91L377.9 88L424 134.1L453.1 104.1C462.5 95.6 462.5 80.4 453.1 71.03L440.1 58.91zM203.7 266.6L186.9 325.1L245.4 308.3C249.4 307.2 252.9 305.1 255.8 302.2L390.1 168L344 121.9L209.8 256.2C206.9 259.1 204.8 262.6 203.7 266.6zM200 64C213.3 64 224 74.75 224 88C224 101.3 213.3 112 200 112H88C65.91 112 48 129.9 48 152V424C48 446.1 65.91 464 88 464H360C382.1 464 400 446.1 400 424V312C400 298.7 410.7 288 424 288C437.3 288 448 298.7 448 312V424C448 472.6 408.6 512 360 512H88C39.4 512 0 472.6 0 424V152C0 103.4 39.4 64 88 64H200z"/></svg>
+                              </a>
                               </div>
                         
                               <div class="w-5 opacity-30 hover:cursor-pointer hover:opacity-100"><a href="<c:url value='/remove/${menu.menuId}'/>">
@@ -128,6 +130,10 @@
                  <div class="mr-6 mb-5 mt-1 ">
                  	<label name="menuDeskripsi" class="mr-10">Deskripsi </label>
                       <input name="menuDeskripsi"  value="" type="text" class="border border-black p-2 text-sm w-9/12 rounded-lg" placeholder="Komposisi">
+                      </div>
+                   <div class="mr-6 mb-5 mt-1 ">
+                 	<label name="menuHarga" class="mr-10">Harga menu </label>
+                      <input name="menuHarga"  value="" type="text" class="border border-black p-2 text-sm w-9/12 rounded-lg" placeholder="Komposisi">
                       </div>
                       <button type="submit" class="w-full text-white bg-amber-600 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" onclick="document.getElementById('authentication-modal').classList.add('hidden')">
                         Tambah Menu</button>
