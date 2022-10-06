@@ -3,9 +3,16 @@ var listPrices = {}
 var listAmount = {}
 
 function orderHandler(){
-	doAjax();
-	printDiv('printableArea');
-	window.location.reload();
+	let nama = document.getElementById("nameInput").value
+	
+	if(nama.length === 0){
+		alert("Nama tidak boleh kosong!")
+	} else {
+		doAjax();
+		printDiv('printableArea');
+		window.location.reload();
+	}
+	
 }
 
 function add(event) {

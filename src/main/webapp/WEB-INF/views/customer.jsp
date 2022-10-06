@@ -21,7 +21,7 @@
         <div class="w-4/6 p-3 lg:w-9/12">
         <div class="flex flex-col px-2 mb-3">
           <label class="font-bold mb-2">Nama: </label>
-          <input type="text" oninput="nameHandler(event)" class="text-lg outline outline-1 rounded indent-2"></input>
+          <input type="text" id="nameInput" value="" oninput="nameHandler(event)" class="text-lg outline outline-1 rounded indent-2"></input>
         </div>
           <h2 class="px-2 text-lg font-bold">Menu</h2>
           <div class="flex max-h-fit flex-col gap-3 overflow-y-auto p-3">
