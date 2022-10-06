@@ -19,10 +19,10 @@
     
     <div class="m-2 min-h-fit w-64">
       <div class="bg-[#2C3639] rounded-t-md border-b-2 border-b-[#A27B5C] p-2 text-right text-sm text-white">
-        <h1>Order No <span>#01</span></h1>
+        <h1>Order #<span id="orderNo"></span></h1>
         <p>Name : <span>${list.customerName}</span></p>
         <p>ID : <span>${list.orderId}</span></p>
-        <p>Time : <span>${list.orderDate}</span></p>
+        <p>Time : <span id="orderTime">${list.orderDate}</span></p>
       </div>
 
       <div class="bg-[#DCD7C9] px-2 py-4 rounded-b-md">

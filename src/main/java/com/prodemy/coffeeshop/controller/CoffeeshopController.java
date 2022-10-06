@@ -158,7 +158,7 @@ public class CoffeeshopController {
 			mns.setMenuDeskripsi(req.getParameter("menuDeskripsi"));
 			menuService.editMenu(mns);			
 		}
-		return "daftar-menu";
+		return "/daftar-menu";
 	}
 
 	
