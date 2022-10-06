@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ import com.prodemy.coffeeshop.util.IdUtility;
 
 
 @Controller
-public class CoffeeshopController {
+public class CoffeeshopController extends BaseController {
     
     @Autowired(required = true)
     private MenuService menuService;
@@ -96,12 +97,6 @@ public class CoffeeshopController {
         return model;
     }
 	
-	@PostMapping("/deleteorder")
-	public String deleteOrder(HttpServletRequest req) {
-	    String id = req.getParameter("orderId");
-	    waitService.deleteOrder(id);
-	    return("redirect:/waitinglist");
-	}
 	
 	@RequestMapping("/login")
     public String login() {
@@ -114,7 +109,9 @@ public class CoffeeshopController {
     }
 	
 	@RequestMapping("/owner")
-    public String owner() {
+    public String login(Model model, Authentication auth) {
+		if (this.hasRole("ROLE_ADMIN", auth)) return "owner";
+		if (this.hasRole("ROLE_USER", auth)) return "redirect:/accessdenied";
         return "owner";
     }
 	

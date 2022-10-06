@@ -14,6 +14,9 @@
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<hibernate.version>5.4.30.Final</hibernate.version>
+		<logback.version>1.1.3</logback.version>
+		<spring.security>5.1.1.RELEASE</spring.security>
+		<jcl.slf4j.version>1.7.25</jcl.slf4j.version>
 	</properties>
 
 	<dependencies>
@@ -72,6 +75,31 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
+				<!-- https://mvnrepository.com/artifact/opensymphony/sitemesh -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+		
+		
+		
+			<!-- SPRING SECURITY -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -90,6 +118,13 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
+		</dependency>
+	
+		<!-- 3. logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
 		</dependency>
 
 		<dependency>
