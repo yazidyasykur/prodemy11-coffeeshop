@@ -48,6 +48,25 @@
             </nav>
 
             <div class="container-fluid px-4">
+            
+            <button type="button" class="flex items-center" onclick="document.getElementById('authentication-modal').classList.remove('hidden')">
+                    <div class="g-3 my-2 hover:cursor-pointer hover:opacity-90 position-relative">                  
+                    <div>
+                        <div class=" px-30 bg-white shadow-sm flex justify-center rounded">
+                          <div >
+                            <div class="mt-2.5 float-left w-7 bg-green-500 rounded-md p-1">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                            </div>
+                               <div class="mx-5 my-1.5">
+                                <h2>Tambah menu</h2>
+                               </div>
+                          </div>
+                                                 
+                        </div>
+                    </div> 
+                </div> 
+           </button>
+           
               <div class="grid grid-cols-1 gap-4  ">
               <c:forEach items="${allMenu}" var="menu">
                 <div class="">                  
@@ -79,23 +98,7 @@
               </c:forEach>
               <!--tambah menu-->
          
-              <button type="button" onclick="document.getElementById('authentication-modal').classList.remove('hidden')">
-                    <div class="g-3 my-2 hover:cursor-pointer hover:opacity-90 position-relative">                  
-                    <div>
-                        <div class=" px-30 bg-white shadow-sm flex justify-center rounded">
-                          <div >
-                            <div class="mt-2.5 float-left w-7 bg-green-500 rounded-md p-1">
-                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-                            </div>
-                               <div class="mx-5 my-1.5">
-                                <h2>Tambah menu</h2>
-                               </div>
-                          </div>
-                                                 
-                        </div>
-                    </div> 
-                </div> 
-           </button>
+              
 
      <div id="authentication-modal" tabindex="-1" aria-hidden="true"  class="hidden overflow-y-auto overflow-x-hidden absolute lg:left-56 top-0 z-50 w-2/3  md:h-full">
     		<div class="relative p-4 ">
@@ -109,7 +112,7 @@
                 
 
 
-                <form id="formMenu" method="post" action="${contextName}/mns" class="space-y-6">
+                
 				
                 <form method="post" action="${contextName}/mns" id="menu-form" class="space-y-6">
 
@@ -140,7 +143,7 @@
                  	<label name="menuHarga" class="mr-4">Harga menu </label>
                       <input id="menuHarga" name="menuHarga"  value="" type="text" class="border border-black p-2 text-sm w-9/12 rounded-lg" placeholder="Harga">
                       </div>
-                      <button type="submit" class="w-full text-white bg-amber-600 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" onclick="document.getElementById('authentication-modal').classList.add('hidden')">
+                      <button type="button" class="w-full text-white bg-amber-600 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" onclick="submitHandler()">
                         Tambah Menu</button>
 
 
