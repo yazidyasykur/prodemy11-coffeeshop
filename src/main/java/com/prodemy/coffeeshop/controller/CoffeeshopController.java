@@ -110,7 +110,12 @@ public class CoffeeshopController extends BaseController {
 	
 	@RequestMapping("/owner")
     public String login(Model model, Authentication auth) {
-		if (this.hasRole("ROLE_ADMIN", auth)) return "owner";
+		if (this.hasRole("ROLE_ADMIN", auth)) {
+			List<Order> orderlist = orderService.listOrderSorted();
+			model.addAttribute("recentOrder", orderlist);
+			return "owner";
+		}
+		
 		if (this.hasRole("ROLE_USER", auth)) return "redirect:/accessdenied";
         return "owner";
     }

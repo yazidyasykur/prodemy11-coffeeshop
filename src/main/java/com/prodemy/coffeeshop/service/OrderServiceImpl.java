@@ -28,4 +28,10 @@ public class OrderServiceImpl implements OrderService {
         orderdao.insert(order);
     }
 
+	@Override
+	@Transactional
+	public List<Order> listOrderSorted() {
+		return orderdao.getAllSorted();
+	}
+
 }

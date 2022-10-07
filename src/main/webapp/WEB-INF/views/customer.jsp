@@ -13,7 +13,6 @@
     <header>
       <nav class="flex items-center justify-between bg-[#2C3639] p-3 outline outline-4 outline-[#A27B5C]">
         <p class="font-semibold text-white">Sigma Coffee</p>
-        <button class="rounded-lg p-2 text-white outline outline-1">Login</button>
       </nav>
     </header>
     <main class="m-3">

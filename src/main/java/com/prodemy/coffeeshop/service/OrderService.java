@@ -8,5 +8,6 @@ public interface OrderService {
     
     public List<Order> listOrder();
     public void saveOrder(Order order);
+    public List<Order> listOrderSorted();
     
 }

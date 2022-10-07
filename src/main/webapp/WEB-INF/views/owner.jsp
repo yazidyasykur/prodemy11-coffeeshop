@@ -1,3 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +10,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="resources/javascript/owner.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="resources/css/owner1.css" />
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="listGenerator()">
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-yellow-700" id="sidebar-wrapper">
@@ -76,52 +82,26 @@
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">Recent Orders</h3>
                     <div class="col">
-                        <table class="table bg-white rounded shadow-sm  table-hover">
+                        <table class="table bg-white rounded shadow-sm table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col" width="50">#</th>
-                                    <th scope="col">Pesanan</th>
+                                    <th scope="col">#ID</th>
                                     <th scope="col">Customer</th>
-                                    <th scope="col">Nomor Antrian</th>
+                                    <th scope="col">Pesanan</th>
+                                     <th scope="col">Total Amount</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
-                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
-                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
-                                   <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
-                                   <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
-                                   <tr>
-                                    <th scope="row">1</th>
-                                    <td>Americano</td>
-                                    <td>Dewi</td>
-                                    <td>20</td>
-                                </tr>
+                            <tbody id="recent-order">
+                            
+                            <c:forEach items="${recentOrder}" var="item">
+                           	<tr>
+                           	<td>${item.orderId}</td>
+                           	<td>${item.customerName}</td>
+                           	<td id="orderlist">${item.orderList}</td>
+                           	<td>${item.totalAmount}</td>
+                           	</tr>
+                            </c:forEach>
+                            
                             </tbody>
                         </table>
                     </div>
