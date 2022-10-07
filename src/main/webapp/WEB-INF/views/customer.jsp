@@ -73,7 +73,10 @@
                 <tbody id="list-table" class="last:border-b-2 border-b-black ">
                 </tbody>
               </table>
-              <p id="totalAmount" class="text-xs text-right font-bold"></p>
+              <div class="text-xs text-right font-bold flex" style="justify-content: flex-end;">
+              <p class="px-2" >Rp. </p>
+              <p id="totalAmount"></p>
+              </div>
             </div>
           </div>
           <button onclick="orderHandler()" class="mt-3 w-[100%] rounded bg-[#A27B5C] p-2 font-bold text-white">Order</button>
