@@ -17,7 +17,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="listGenerator()">
+<body onload="formatter()">
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-yellow-700" id="sidebar-wrapper">
@@ -50,7 +50,7 @@
                     <div class="col-md-3">
                         <div class="px-30 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">20</h3>
+                                <h3 class="fs-2">${jumlahMenu}</h3>
                                 <p class="fs-5">Menu</p>
                             </div>
                             <i class="fas fa-coffee fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -60,21 +60,11 @@
                     <div class="col-md-3">
                         <div class="px-30 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">500</h3>
+                                <h3 class="fs-5" id="penjualan">0</h3>
                                 <p class="fs-5">Penjualan</p>
                             </div>
                             <i
                                 class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="px-32 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">20%</h3>
-                                <p class="fs-5">Keuntungan</p>
-                            </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
                 </div>
@@ -86,6 +76,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#ID</th>
+                                    <th scope="col">Tanggal</th>
                                     <th scope="col">Customer</th>
                                     <th scope="col">Pesanan</th>
                                      <th scope="col">Total Amount</th>
@@ -96,9 +87,10 @@
                             <c:forEach items="${recentOrder}" var="item">
                            	<tr>
                            	<td>${item.orderId}</td>
+                           	<td id="orderdate">${item.orderDate}</td>
                            	<td>${item.customerName}</td>
                            	<td id="orderlist">${item.orderList}</td>
-                           	<td>${item.totalAmount}</td>
+                           	<td id="amount">${item.totalAmount}</td>
                            	</tr>
                             </c:forEach>
                             

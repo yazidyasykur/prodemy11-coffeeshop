@@ -49,4 +49,12 @@ public class MenuDaoImpl implements MenuDao{
         session.update(menu);
     }
 
+	@Override
+	public int countMenu() {
+		Session session = sessionFactory.getCurrentSession();
+		Long count = ((Long) session.createQuery("select count(*) from Menu").uniqueResult());
+		Integer totalMenu = count.intValue();
+		return totalMenu;
+	}
+
 }

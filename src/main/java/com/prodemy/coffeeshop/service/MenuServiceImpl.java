@@ -48,4 +48,10 @@ public class MenuServiceImpl implements MenuService {
 		return menudao.findById(id);
 	}
 
+	@Override
+	@Transactional
+	public int hitungJumlahMenu() {
+		return menudao.countMenu();
+	}
+
 }

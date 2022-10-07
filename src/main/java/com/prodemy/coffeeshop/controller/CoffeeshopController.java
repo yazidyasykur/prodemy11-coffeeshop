@@ -112,7 +112,9 @@ public class CoffeeshopController extends BaseController {
     public String login(Model model, Authentication auth) {
 		if (this.hasRole("ROLE_ADMIN", auth)) {
 			List<Order> orderlist = orderService.listOrderSorted();
+			int jumlahMenu = menuService.hitungJumlahMenu();
 			model.addAttribute("recentOrder", orderlist);
+			model.addAttribute("jumlahMenu", jumlahMenu);
 			return "owner";
 		}
 		

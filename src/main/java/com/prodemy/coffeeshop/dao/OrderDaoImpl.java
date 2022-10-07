@@ -32,7 +32,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getAllSorted() {
 		Session session = sessionFactory.getCurrentSession();
-        List<Order> orderList = session.createQuery("from Order order by order_date asc").list();
+        List<Order> orderList = session.createQuery("from Order order by order_date desc").list();
         return orderList;
 	}
 

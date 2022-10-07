@@ -11,5 +11,6 @@ public interface MenuService {
     public void tambahMenu(Menu menu);
     public void editMenu(Menu menu);
     public Menu findById(String id);
+    public int hitungJumlahMenu();
     
 }
