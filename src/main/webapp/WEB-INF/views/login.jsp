@@ -41,7 +41,6 @@ Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1">
         </div>
-        <a class="mb-3" href="#" style="display:block">Register</a>
    
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
