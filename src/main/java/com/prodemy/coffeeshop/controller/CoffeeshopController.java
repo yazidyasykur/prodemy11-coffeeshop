@@ -130,16 +130,7 @@ public class CoffeeshopController extends BaseController {
 		return model;
 	}
 	
-	
-	@GetMapping("/edit")
-	public String edit(Model model, HttpServletRequest req) throws Exception {
-		Menu mns = menuService.findById(req.getParameter("id"));
-		model.addAttribute("mns", mns);
-		List<Menu> list = menuService.listMenu();
-		model.addAttribute("allMenu", list);
-		return "edit";
-	}
-	
+		
 	@PostMapping("/mns")
 	public String tambah(Model model, HttpServletRequest req) throws Exception {
 		String mode = req.getParameter("mode");
