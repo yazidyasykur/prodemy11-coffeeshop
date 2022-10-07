@@ -26,8 +26,6 @@
             <div class="list-group list-group-flush my-3">
                 <a href="owner" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Statistics</a>
                 <a href="daftar-menu" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-paperclip me-2"></i>Daftar Menu</a>          
                 <a href="login" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
