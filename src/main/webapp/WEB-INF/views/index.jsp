@@ -16,7 +16,6 @@
 				<ul>
 					<li><a href="customer">Customer</a></li>
 					<li><a href="login">Login</a></li>
-					<li><a href="owner">Owner</a></li>
 					<li><a href="register">Registration</a></li>
 					<li><a href="waitinglist">Waiting List</a></li>
 				</ul>
